@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextCoin</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <section id="home">
+        <h1>Главная</h1>
+        <h2>Курсы валют</h2>
+        <div class="currency">
+            <div class="currency-item" id="usdd">
+                <img src="./img/doll 1.png" alt="">
+                <h3>USD</h3>
+                <p>Курс: <span id="usd-rate">Загрузка...</span> грн</p>
+            </div>
+            <div class="currency-item" id="eurr">
+                <img src="./img/eur 1.png" alt="">
+                <h3>EUR</h3>
+                <p>Курс: <span id="eur-rate">Загрузка...</span> грн</p>
+            </div>
+            <div class="currency-item" id="btcc">
+                <img src="./img/btc 1.png" alt="">
+                <h3>BTC</h3>
+                <p>Курс: <span id="btc-rate">Загрузка...</span> $</p>
+            </div>
+        </div>                
+    </section>
+
+    <section id="wallet">
+        <h1>Кошелек</h1>
+
+        <div id="balance">
+            <h2>Баланс</h2>
+            <p><span id="blns-usd">0.00</span> USD</p> <hr>
+            <p><span id="blns-eur">0.00</span> EUR</p> <hr>
+        </div>
+
+        <div id="give-take">
+            <div id="give">
+                <p>Пополнить</p>
+                <img src="./img/send.png" alt="">
+            </div>
+            <div id="take">
+                <p>Вывести</p>
+                <img src="./img/recive.png" alt="">
+            </div>
+        </div>
+
+        <div id="options-give">
+            <p>Выберите на какую сумму хотите пополнить</p>
+            <input type="number" id="amount-give" placeholder="Сумма в USD">
+            <input type="number" id="amount-give2" placeholder="Сумма в EUR">
+            <button id="confirm-give">Подтвердить</button>
+            <button class="close">Отменить</button>
+
+        </div>
+
+        <div id="options-take" style="display: none;">
+    <p>Введите сумму, которую хотите вывести</p>
+    <input type="number" id="amount-take" placeholder="Сумма в USD">
+    <input type="number" id="amount-take2" placeholder="Сумма в EUR">
+    <button id="confirm-take">Подтвердить вывод</button>
+    <button class="close">Отменить</button>
+</div>
+
+        <div id="buy">
+            <p>Купить валюту</p>
+            <div id="currencies"> 
+                 <img src="./img/doll 1.png" alt="">
+                 <img src="./img/eur 1.png" alt="">
+                 <img src="./img/gbp 2.png" alt="">
+                <img src="./img/btc 1.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section id="account">
+        <h1>Кабинет</h1>
+        <h2>Временно недоступно 😔</h2>
+        <div id="warning">
+            <img src="./img/warning.png" alt="">
+            <p>Мы приносим извинения за неудобства. В настоящее время раздел "Кабинет" временно недоступен. Мы работаем над его улучшением и скоро он будет снова доступен. Спасибо за понимание!</p>
+        </div>
+
+    </section>
+
+    <footer id="footer">
+        <div id="menu">
+            <a href="#home" id="s-home"><img src="./img/home.png" alt=""> Главная</a>
+            <a href="#wallet" id="s-wallet"><img src="./img/wallet.png" alt="">Кошелек</a>
+            <a href="#account" id="s-account"><img src="./img/user.png" alt="">Kабинет</a>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

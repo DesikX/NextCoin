@@ -1,0 +1,289 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    margin: 0; 
+    background: linear-gradient(to bottom, #4facfe 0%, #0072fe 100%);
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+    box-sizing: border-box; /* Чтобы padding не раздувал высоту */
+
+    transition: background 0.5s ease-in-out;
+    background-attachment: fixed; 
+
+}
+
+
+/* Главная */
+#home {
+    /* display: none; */
+}
+
+.currency-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: rgba(238, 243, 244, 0.425);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.currency-item p {
+    margin: 0;
+    font-size: 13px;
+}
+
+#footer {
+    margin-top: auto; 
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    padding: 0;
+    width: 100%;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Кошелек */
+
+#wallet {
+    display: none;
+}
+
+#balance {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: #00f1fe91;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+#balance hr {
+    border: none;
+    border-top: 1px solid #000000;
+    margin: 20px 0;
+    width: 100%;
+}
+
+#give-take {
+    display: flex;
+    justify-content: center;
+    gap: 10vw;
+    margin-bottom: 20px;
+}
+
+#give, #take{
+    background: #00f1fe91;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 50vw;
+    height: 18vh;
+    text-align: center;
+}
+
+#give-take img {
+    width: 40%;
+    
+}
+
+#buy {
+    background: #00f1fe91;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    height: 18vh;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+#buy img {
+    width: 12%;
+    
+}
+
+#currencies {
+    display: flex;
+    gap: 30px;
+}
+
+#options-give {
+    display: none;
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    height: 51vh;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+    background: #0e0c21;
+    top: 50vh;
+    right: 0%;
+}
+
+#options-give input {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+}
+
+#confirm-give {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #0072fe;
+    color: white;
+    cursor: pointer;
+}
+
+.close {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f75252;
+    color: white;
+    cursor: pointer;
+}
+
+#options-give, #options-take {
+    position: fixed; /* Чтобы всплывало поверх всего */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 1000;
+    width: 80%;
+    text-align: center;
+}
+
+/* Стили для кнопок внутри модалок */
+#options-give button, #options-take button {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+#confirm-give {
+    background-color: #4facfe;
+    color: white;
+}
+
+#confirm-take {
+    background-color: #4facfe;
+    color: white;
+}
+
+#amount-take {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+}
+
+#amount-take2 {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+}
+
+/* Кабинет */
+
+#account {
+    display: none;
+}
+
+#warning {
+    margin-top: 15vh;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    height: 18vh;
+    padding: 20px;
+    text-align: center;
+}
+
+#warning img {
+    width: 30%;
+}
+
+
+/* FOOTER */
+
+#footer a {
+    text-decoration: none; 
+    color: #000;         
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+
+#footer img {
+    width: 35px; 
+    height: 35px;
+}
+
+#footer a:first-child {
+    border-bottom: 3px solid #000;
+}
+
+
+/* Правка стилей для карточек  */
+
+.currency-item, #balance, #give, #take, #buy {
+    background: rgba(255, 255, 255, 0.2) !important; /* Белый полупрозрачный */
+    backdrop-filter: blur(10px); /* Размытие фона за элементом */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Тонкая светлая рамка */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15); /* Мягкая тень */
+}
+
+#balance hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Плавный эффект при смены секции */
+
+/* Создаем саму анимацию появления */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Применяем её к секциям, когда они становятся видимыми */
+section {
+    animation: fadeIn 0.4s ease-out;
+}
