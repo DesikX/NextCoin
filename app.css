@@ -386,3 +386,17 @@ body {
 section {
     animation: fadeIn 0.4s ease-out;
 }
+
+
+
+#block {
+    position: absolute;
+    background: #fff6f64d;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: 10vh;
+    z-index: -100;
+    color: #ffffff00;
+    border-top: 2px solid #ffffff3e;
+}
