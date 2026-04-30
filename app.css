@@ -96,7 +96,7 @@ body {
 }
 
 #give-take img {
-    width: 40%;
+    width: 80px;
     
 }
 
@@ -109,17 +109,24 @@ body {
     height: 18vh;
     padding: 20px;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 
 #buy img {
-    width: 12%;
-    
+    width: 50px;
+    max-width: 100%; 
+    height: auto;   
+    display: block; 
+    position: relative;
 }
 
 #currencies {
     display: flex;
     gap: 30px;
-}
+    box-sizing: border-box;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;}
 
 #options-give {
     display: none;
@@ -223,25 +230,117 @@ body {
 
 #account {
     display: none;
+    width: 100%; /* Убедись, что блок занимает всю ширину */
+    max-width: 400px;
+    margin: 0 auto;
 }
 
-#warning {
-    margin-top: 15vh;
-    border-radius: 25px;
-    font-size: 18px;
+#account-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+#account-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+#account-header img {
+    width: 60px;          
+    height: 60px;        
+    border-radius: 50%;
+    object-fit: cover;   
+    border: 2px solid #ffffff4d;
+    transition: transform 0.3s ease;
+}
+
+#account-header img:hover {
+    transform: scale(1.1); 
+}
+
+#account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+    background: #ffffff1a; 
+    padding: 15px;
+    border-radius: 15px;
+}
+
+#account-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #000000; 
+}
+
+#account-info span {
+    display: block;      
+    color: #000; /* Меняем с #fff на черный, чтобы было видно */
     font-weight: bold;
-    width: 100%;
-    height: 18vh;
-    padding: 20px;
-    text-align: center;
+    font-size: 16px;
 }
 
-#warning img {
-    width: 30%;
+#balance_cripto {
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+#balance_cripto p:first-child {
+    margin-top: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+#balance_cripto p:not(:first-child) {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    border-bottom: 1px solid #ffffff1a;
+    padding-bottom: 5px;
+}
+
+#balance_cripto span {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+}
+
+/* обноваляю стили для кабинета: */
+#account {
+    display: none; /* По умолчанию скрыт, включается через JS[cite: 2, 3] */
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    color: #000; /* Черный текст для читаемости */
+}
+
+#account-header img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover; /* Чтобы фото не сжималось[cite: 2] */
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+#account-info span {
+    display: block;
+    color: #000; /* Сделали черным, чтобы было видно на розовом фоне[cite: 2] */
+    font-weight: bold;
+}
+
 
 
 /* FOOTER */
+
 
 #footer a {
     text-decoration: none; 

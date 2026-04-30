@@ -8,6 +8,7 @@
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
+    
     <section id="home">
         <h1>Главная</h1>
         <h2>Курсы валют</h2>
@@ -79,13 +80,20 @@
     </section>
 
     <section id="account">
-        <h1>Кабинет</h1>
-        <h2>Временно недоступно 😔</h2>
-        <div id="warning">
-            <img src="./img/warning.png" alt="">
-            <p>Мы приносим извинения за неудобства. В настоящее время раздел "Кабинет" временно недоступен. Мы работаем над его улучшением и скоро он будет снова доступен. Спасибо за понимание!</p>
-        </div>
-
+                <div id="account-header">
+                    <h1>Кабинет</h1>
+                    <img src="./img/avatar.jpg" alt="Аватар пользователя">
+                </div>    
+            <div id="account-info">
+                <p>Имя пользователя: <span id="username">user123</span></p>
+                <p>Email: <span id="email">user123@example.com</span></p>
+            </div>
+            <div id="balance_cripto">
+                <p>Общий баланс:</p>
+                <p><span id="crypto-balance1">0.00</span> USD</p>
+                <p><span id="crypto-balance2">0.00</span> EUR</p>
+                <p><span id="crypto-balance3">0.00</span> BTC</p>
+            </div>
     </section>
 
     <footer id="footer">
