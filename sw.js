@@ -1,5 +1,5 @@
 //
-const CACHE_NAME = 'nextcoin-v5'; // <--- ВСЕГДА меняй версию (v3, v4...), если обновил код!
+const CACHE_NAME = 'nextcoin-v6'; // <--- ВСЕГДА меняй версию (v3, v4...), если обновил код!
 const ASSETS = [
   './',
   'index.html',
@@ -19,7 +19,7 @@ self.addEventListener('install', (event) => {
       return cache.addAll(ASSETS);
     })
   );
-  self.skipWaiting(); // Заставляет новый SW активироваться сразу
+  self.skipWaiting(install); // Заставляет новый SW активироваться сразу
 });
 
 // 2. Активация: чистим все старые кеши
