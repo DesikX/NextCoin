@@ -1,5 +1,5 @@
 //
-const CACHE_NAME = 'nextcoin-v2'; // Каждое изменение стилей = новая версия (v3, v4...)
+const CACHE_NAME = 'nextcoin-v7'; // Каждое изменение стилей = новая версия (v3, v4...)
 const ASSETS = [
     './',
     'index.html',
