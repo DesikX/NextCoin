@@ -1,44 +1,34 @@
 //
-const CACHE_NAME = 'nextcoin-v6'; // <--- ВСЕГДА меняй версию (v3, v4...), если обновил код!
+const CACHE_NAME = 'nextcoin-v2'; // Каждое изменение стилей = новая версия (v3, v4...)
 const ASSETS = [
-  './',
-  'index.html',
-  'app.css',
-  'app.js',
-  'manifest.json', // Рекомендую добавить и его
-  'img/home.png',
-  'img/wallet.png',
-  'img/user.png'
+    './',
+    'index.html',
+    'app.css',
+    'app.js',
+    'manifest.json'
 ];
 
-// 1. Установка: кешируем ресурсы
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log('SW: Кеширование ресурсов');
-      return cache.addAll(ASSETS);
-    })
-  );
-  self.skipWaiting(install); // Заставляет новый SW активироваться сразу
+    event.waitUntil(
+        caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
+    );
+    self.skipWaiting(); // Принудительно активируем новый SW сразу[cite: 3]
 });
 
-// 2. Активация: чистим все старые кеши
 self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((keys) => {
-      return Promise.all(
-        keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
-      );
-    })
-  );
-  self.clients.claim(); // Сразу берем управление над всеми вкладками
+    event.waitUntil(
+        caches.keys().then((keys) => {
+            return Promise.all(
+                keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+            );
+        })
+    );
+    self.clients.claim(); // Заставляем SW сразу управлять всеми вкладками[cite: 3]
 });
 
-// 3. Запросы: стратегия "Network First" для JS и CSS (чтобы обновления долетали быстрее)
+// Стратегия Network First: сначала идем в сеть, если нет — в кэш[cite: 3]
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    fetch(event.request).catch(() => {
-      return caches.match(event.request);
-    })
-  );
+    event.respondWith(
+        fetch(event.request).catch(() => caches.match(event.request))
+    );
 });
