@@ -125,13 +125,33 @@ document.querySelectorAll('.close').forEach(b => b.addEventListener('click', clo
 // --- 6. API КУРСОВ И ССЫЛКИ ---
 async function getRates() {
     try {
-        const res = await fetch('https://api.exchangerate-api.com/v4/latest/UAH');
-        const data = await res.json();
+        // 1. Запрос фиатных курсов (USD, EUR к гривне)
+        const fiatRes = await fetch('https://api.exchangerate-api.com/v4/latest/UAH');
+        const fiatData = await fiatRes.json();
+
+        // 2. Запрос курса Биткоина (BTC к доллару)
+        const cryptoRes = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
+        const cryptoData = await cryptoRes.json();
+
+        // Находим элементы в HTML
         const usdRate = document.getElementById('usd-rate');
         const eurRate = document.getElementById('eur-rate');
-        if (usdRate) usdRate.innerText = (1 / data.rates.USD).toFixed(2);
-        if (eurRate) eurRate.innerText = (1 / data.rates.EUR).toFixed(2);
-    } catch (e) { console.error("Ошибка при получении курсов валют"); }
+        const btcRate = document.getElementById('btc-rate');
+
+        // Выводим данные
+        if (usdRate) usdRate.innerText = (1 / fiatData.rates.USD).toFixed(2);
+        if (eurRate) eurRate.innerText = (1 / fiatData.rates.EUR).toFixed(2);
+        
+        // Добавляем проверку и вывод для BTC[cite: 1]
+        if (btcRate && cryptoData.bitcoin) {
+            btcRate.innerText = cryptoData.bitcoin.usd.toLocaleString(); 
+        }
+
+    } catch (e) { 
+        console.error("Ошибка при получении курсов валют", e); 
+        const btcRate = document.getElementById('btc-rate');
+        if (btcRate) btcRate.innerText = "Ошибка";
+    }
 }
 
 const rateLinks = { 'usdd': 'USD-UAH', 'eurr': 'EUR-UAH', 'btcc': 'BTC-USD' };
