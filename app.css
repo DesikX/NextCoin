@@ -7,13 +7,14 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0; 
-    background: linear-gradient(to bottom, #4facfe 0%, #0072fe 100%);
+    background: linear-gradient(to right, #607d8b, #000c40);
     font-family: 'Courier New', Courier, monospace;
     padding: 20px;
     box-sizing: border-box; /* Чтобы padding не раздувал высоту */
 
     transition: background 0.5s ease-in-out;
     background-attachment: fixed; 
+    color: whitesmoke;
 
 }
 
@@ -233,6 +234,7 @@ body {
     width: 100%; /* Убедись, что блок занимает всю ширину */
     max-width: 400px;
     margin: 0 auto;
+    color: whitesmoke;
 }
 
 #account-header {
@@ -272,12 +274,12 @@ body {
 #account-info p {
     margin: 0;
     font-size: 14px;
-    color: #000000; 
+    color: whitesmoke; 
 }
 
 #account-info span {
     display: block;      
-    color: #000; /* Меняем с #fff на черный, чтобы было видно */
+    color: whitesmoke;
     font-weight: bold;
     font-size: 16px;
 }
@@ -320,7 +322,7 @@ body {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
-    color: #000; /* Черный текст для читаемости */
+    color: whitesmoke;
 }
 
 #account-header img {
@@ -333,7 +335,7 @@ body {
 
 #account-info span {
     display: block;
-    color: #000; /* Сделали черным, чтобы было видно на розовом фоне[cite: 2] */
+    color: whitesmoke;
     font-weight: bold;
 }
 

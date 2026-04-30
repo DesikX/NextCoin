@@ -67,9 +67,9 @@ function setActiveSection(activeKey, gradient) {
     document.body.style.background = gradient;
 }
 
-navBtns.home?.addEventListener('click', (e) => { e.preventDefault(); setActiveSection('home', 'linear-gradient(to bottom, #4facfe 0%, #0072fe 100%)'); });
-navBtns.wallet?.addEventListener('click', (e) => { e.preventDefault(); setActiveSection('wallet', 'linear-gradient(to bottom, #4facfe 0%, #00f2a7 100%)'); });
-navBtns.account?.addEventListener('click', (e) => { e.preventDefault(); setActiveSection('account', 'linear-gradient(to bottom, #ff9a9e 0%, #fecfef 100%)'); });
+navBtns.home?.addEventListener('click', (e) => { e.preventDefault(); setActiveSection('home', 'linear-gradient(to right, #607d8b, #000c40)'); });
+navBtns.wallet?.addEventListener('click', (e) => { e.preventDefault(); setActiveSection('wallet', 'linear-gradient(to right, #292e49, #536976)'); });
+navBtns.account?.addEventListener('click', (e) => { e.preventDefault(); setActiveSection('account', 'linear-gradient(to right, #292e49, #536976, #4f799b)'); });
 
 // --- 5. ОПЕРАЦИИ С БАЛАНСОМ ---
 const modals = { 
